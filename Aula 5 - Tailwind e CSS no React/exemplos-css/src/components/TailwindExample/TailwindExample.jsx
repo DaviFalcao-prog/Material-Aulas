@@ -1,6 +1,6 @@
 export default function TailwindExample() {
   return (
-    <div className="p-6 bg-gray-50 rounded-lg shadow-md">
+    <div className="p-6 bg-gray-50 rounded-lg shadow-md flex justify-center items-center hover:bg-amber-600">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">
         Exercício com Tailwind
       </h2>
