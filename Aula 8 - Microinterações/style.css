@@ -42,7 +42,7 @@ section {
 }
 .card:hover{
   transform: translateY(-5px);
-  box-shadow: 0px 10px 30px black;
+  box-shadow: 0px 6px 12px rgb(0, 0, 0, 0.8);
 }
 
 /* 3. Link com underline animado */
@@ -57,9 +57,13 @@ section {
   position: absolute;
   left: 0;
   bottom: -3px;
-  width: 100%;
+  width: 0;
   height: 2px;
   background: #3498db;
+  transition: width 0.3s ease;
+}
+.link:hover::after{
+  width: 100px;
 }
 
 /* 4. Loader animado */
@@ -69,6 +73,11 @@ section {
   border: 4px solid #ccc;
   border-top-color: #3498db;
   border-radius: 50%;
+  animation: spin 1s ease infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); } 
 }
 
 /* 5. Ícone que balança */
@@ -76,6 +85,14 @@ section {
   font-size: 40px;
   cursor: pointer;
   display: inline-block;
+  animation: sino 2s ease infinite;
+}
+@keyframes sino{
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(-15deg); }
+  75% { transform: rotate(15deg); }
+  100% { transform: rotate(0deg); }
 }
 
 /* 6. Botão com gradiente animado */
@@ -88,6 +105,7 @@ section {
   background: linear-gradient(270deg, #ff6ec4, #7873f5);
   background-size: 200% 200%;
   cursor: pointer;
+  animation: gradientMove 3s ease infinite;
 }
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
@@ -122,6 +140,13 @@ section {
   border: none;
   background: none;
   cursor: pointer;
+  animation: like 1s ease infinite;
+}
+
+@keyframes like{
+  0%{transform: scale(1);}
+  50%{transform: scale(1.5);}
+  100%{transform: scale(1);}
 }
 
 /* Exercício 2 */
@@ -135,7 +160,12 @@ section {
 }
 
 .progress-bar {
-  width: 100%;
+  width: 0;
   height: 100%;
   background: linear-gradient(90deg, #3498db, #2ecc71);
+  animation: progress 5s ease infinite;
+}
+@keyframes progress {
+  0% { width: 0; }
+  100% { width: 100%; }
 }
